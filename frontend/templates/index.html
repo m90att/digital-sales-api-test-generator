@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Sales API Test Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Digital Sales API Test Generator</h1>
+            <nav>
+                <button id="newPayload">New Payload</button>
+                <button id="exportCsv">Export CSV</button>
+                <button id="history">History</button>
+            </nav>
+        </header>
+        
+        <main class="main-content">
+            <div class="left-panel">
+                <h2>Configuration</h2>
+                <form id="configForm">
+                    <div class="form-group">
+                        <label for="role">Applicant Role:</label>
+                        <select id="role" name="role">
+                            <option value="MAIN">Main Applicant</option>
+                            <option value="GUARANTOR">Guarantor</option>
+                            <option value="PAYEE">Payee</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender">
+                            <option value="">Random</option>
+                            <option value="MALE">Male</option>
+                            <option value="FEMALE">Female</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="maritalStatus">Marital Status:</label>
+                        <select id="maritalStatus" name="maritalStatus">
+                            <option value="">Random</option>
+                            <option value="SINGLE">Single</option>
+                            <option value="MARRIED">Married</option>
+                            <option value="DIVORCED">Divorced</option>
+                            <option value="WIDOWED">Widowed</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="right-panel">
+                <h2>JSON Preview</h2>
+                <div class="json-container">
+                    <pre id="jsonPreview">Click "Generate JSON" to see preview</pre>
+                </div>
+                <div class="json-actions">
+                    <button id="copyJson">Copy JSON</button>
+                    <button id="exportJson">Export JSON</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <button id="generateBtn" class="generate-btn">Generate JSON</button>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
